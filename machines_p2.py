@@ -39,10 +39,10 @@ class MCTSNode:
         if position and piece in self.available_pieces:
             new_board[position[0]][position[1]] = self.available_pieces.index(piece) + 1
         new_pieces = deepcopy(self.available_pieces)
-        print("****")
+        # print("****")
         if piece in self.available_pieces:
             new_pieces.remove(piece)    
-        print("삭제")
+        # print("삭제")
         child_node = MCTSNode(new_board, new_pieces, piece, parent=self, position=position)
         self.children.append(child_node)
         # new_pieces.remove(piece)
